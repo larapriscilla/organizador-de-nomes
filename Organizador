@@ -1,0 +1,29 @@
+#Organizar lista de nomes de pessoas por ordem alfabética
+
+def organizar_nomes():
+    historico_nomes = []
+
+    while True:
+        lista_nomes = historico_nomes.copy()
+
+        while True:
+            nome = input("Digite um nome (ou 'parar' para encerrar): ")
+
+            if nome.lower() == 'parar':
+                break
+            else:
+                lista_nomes.append(nome)
+
+        lista_nomes.sort()
+        historico_nomes = lista_nomes.copy()
+
+        print("\nNomes organizados em ordem alfabética:")
+        for nome in lista_nomes:
+            print(nome)
+
+        reiniciar = input("\nDeseja continuar com a lista de onde parou? (s/n): ")
+
+        if reiniciar.lower() != 's':
+            break
+# Chamar a função para executar o programa
+organizar_nomes()
